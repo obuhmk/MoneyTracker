@@ -5,11 +5,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+
+    protected String TAG = "States";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,44 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+
     }
+
+
+
+    protected  void onStart(){
+        super.onStart();
+        Log.d(TAG, "MainActivity: onStart()");
+    }
+
+    protected void onRestart(){
+        super.onRestart();
+        Log.d(TAG,"MainActivity: onRestart");
+    }
+
+    protected void onResume(){
+        super.onResume();
+        Log.d(TAG,"MainActivity: onResume()");
+    }
+
+    protected void onPause(){
+        super.onPause();
+        Log.d(TAG, "MainActivity: onPause");
+    }
+
+    protected void onStop(){
+        super.onStop();
+        Log.d(TAG,"MainActivity: onStop()");
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d(TAG, "MainActivity: onDestroy");
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -50,3 +90,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+
